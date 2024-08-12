@@ -4,7 +4,7 @@ import Flashcard from '../components/flashcard'
 
 function HomePage() {
   return (
-    <div className='w-screen min-h-screen'>
+    <div className='w-screen min-h-screen flex flex-col'>
         <Navbar/>
         <Flashcard/>
     </div>

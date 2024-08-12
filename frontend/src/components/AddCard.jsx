@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, FormControl, FormLabel, Input, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay } from '@chakra-ui/react';
 
-function AddCard({ isOpen, onClose }) {
+function AddCard({ isOpen, onClose, isEdit , selectedCard }) {
  
 
 
@@ -21,7 +21,7 @@ function AddCard({ isOpen, onClose }) {
         <Modal isOpen={isOpen} onClose={onClose}>
             <ModalOverlay />
             <ModalContent>
-                <ModalHeader>Add a New Flashcard</ModalHeader>
+                <ModalHeader>{`${isEdit?'Edit Card':'Add a New Flashcard'}`}</ModalHeader>
                 <ModalCloseButton />
                 <ModalBody pb={6}>
                     <FormControl>
