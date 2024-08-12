@@ -9,6 +9,7 @@ function Flashcard() {
     const [flash, setFlash] = useState(Flashcards);
     const [currPage, setCurrentPage] = useState(1);
     const [totalPages, setTotalPages] = useState(Math.ceil(Flashcards.length / 1));
+    const [selectedCard,setSelectedCard]=useState(null);
     const { isOpen, onOpen, onClose } = useDisclosure();
 
     // Function to handle page changes
@@ -20,12 +21,32 @@ function Flashcard() {
             } else if (direction === 'prev') {
                 newPage = Math.max(prevPage - 1, 1);
             }
+            setSelectedCard(flash[newPage-1])
+            // console.log(selectedCard)
             return newPage;
         });
     };
 
-    // Get current flashcard based on currPage
-    const currentFlashcard = flash.length > 0 ? flash[currPage - 1] : null;
+    const editCard=async()=>{
+        try {
+            
+        } catch (error) {
+            
+        }
+    }
+
+    const deleteCard=async ()=>{
+        try {
+            
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+
+
+   
+    // const currentFlashcard = flash.length > 0 ? flash[currPage - 1] : null;
 
     return (
         <div className='w-screen h-screen flex justify-center items-center border-1 bg-blue-50'>
@@ -78,8 +99,8 @@ function Flashcard() {
                             Actions
                         </MenuButton>
                         <MenuList>
-                            <MenuItem>Edit</MenuItem>
-                            <MenuItem>Delete</MenuItem>
+                            <MenuItem onClick={()=>editCard(selectedCard)}>Edit</MenuItem>
+                            <MenuItem onClick={()=>deleteCard(selectedCard)}>Delete</MenuItem>
                         </MenuList>
                     </Menu>
                     <Button

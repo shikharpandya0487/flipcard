@@ -2,10 +2,20 @@ import React from 'react';
 import { Button, FormControl, FormLabel, Input, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay } from '@chakra-ui/react';
 
 function AddCard({ isOpen, onClose }) {
-    const handleSave = () => {
-        // Handle the form submission logic here
-        onClose();
-    };
+ 
+
+
+    const handleSave=async()=>{
+        try {
+
+            
+        } catch (error) {
+            console.log(error)
+        }
+        finally{
+            onClose();
+        }
+    }
 
     return (
         <Modal isOpen={isOpen} onClose={onClose}>
